@@ -1,0 +1,10 @@
+let $VIM_FILES = $VIM.'/vimfiles'
+
+" create the Temp Directory
+let $VIM_TMP = $TMP.'\vim'
+if !isdirectory($VIM_TMP)
+  let cmd = 'silent !md '. $VIM_TMP
+  exec cmd
+  unlet cmd
+endif
+set dir=$VIM_TMP
