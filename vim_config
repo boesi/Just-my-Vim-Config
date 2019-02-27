@@ -1,10 +1,18 @@
-let $VIM_FILES = $VIM.'/vimfiles'
+let $VIM_FILES = './vimfiles'
 
 " create the Temp Directory
-let $VIM_TMP = $TMP.'\vim'
+if has("unix")
+	let $VIM_TMP = '/tmp/vim'
+elseif has("win32")
+	let $VIM_TMP = $TMP.'/vim'
+endif
 if !isdirectory($VIM_TMP)
-  let cmd = 'silent !md '. $VIM_TMP
-  exec cmd
-  unlet cmd
+	if has("unix")
+		let cmd = 'silent !mkdir '. $VIM_TMP
+	elseif has("win32")
+		let cmd = 'silent !md '. $VIM_TMP
+	endif
+	exec cmd
+	unlet cmd
 endif
 set dir=$VIM_TMP
