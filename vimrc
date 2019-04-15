@@ -60,7 +60,11 @@ set smartcase    " Case only matters if capitel letters are used
 
 " set encoding=iso-8859-15
 set encoding=utf8
-set fileformats=dos,unix,mac
+if has("win32")
+	set fileformats=dos,unix,mac
+elseif has("unix")
+	set fileformats=unix,dos,mac
+endif
 
 set mousemodel=popup_setpos
 set list listchars=tab:»-,trail:·,precedes:«,extends:»
