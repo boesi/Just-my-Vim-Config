@@ -1,3 +1,6 @@
+if !exists($VIM_CONFIG)
+	let $VIM_CONFIG = '~/.vim'
+endif
 let $VIM_FILES = $VIM_CONFIG . '/vimfiles'
 
 " create the Temp Directory
