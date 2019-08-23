@@ -64,7 +64,7 @@ set fileformats=dos,unix,mac
 
 set mousemodel=popup_setpos
 set list listchars=tab:»-,trail:·,precedes:«,extends:»
-set guifont=Knack\ NF:h8.0
+set guifont='Hack'\ NF:h8.0
 " }}}
 
 
