@@ -16,6 +16,19 @@ colo xoria256       " Colorscheme
 " {{{ generell settings
 " no menu or toolbar - this must be set separately or nothing is set
 set guioptions-=m guioptions-=T guicursor=i:ver12,a:blinkoff0
+" set the cursor shape in terminal
+if &term =~ "^xterm\\|rxvt"
+	let &t_SI = "\<Esc>[6 q"
+	let &t_SR = "\<Esc>[4 q"
+	let &t_EI = "\<Esc>[2 q"
+	" 1 or 0 -> blinking block
+	" 2 solid block
+	" 3 blinking underscore
+	" 4 solid underscore
+	" Recent versions of xterm (282 or above) also support
+	" 5 -> blinking vertical bar
+	" 6 -> solid vertical bar
+endif
 set linespace=0  " no space between the lines
 set nocompatible " that's a vim!
 set laststatus=2 " show always status line
@@ -68,7 +81,8 @@ endif
 
 set mousemodel=popup_setpos
 set list listchars=tab:»-,trail:·,precedes:«,extends:»
-set guifont='Hack'\ NF:h8.0
+set guifont=Hasklug\ Nerd\ Font\ Regular\ 10
+"set guifont=Hack\ Nerd\ Font\ Regular\ 10
 " }}}
 
 
