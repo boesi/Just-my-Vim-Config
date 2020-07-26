@@ -202,5 +202,7 @@ vnoremap <M-Right>   >gv
 vnoremap <M-Left>    <gv
 " }}}
 
-
+" {{{ save with sudo
+command W :execute 'w !sudo tee "%" > /dev/null' | :edit!
+" }}}
 
