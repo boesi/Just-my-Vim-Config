@@ -127,6 +127,7 @@ call plug#begin($VIM_FILES.'/plugged')
 	Plug 'qstrahl/vim-matchmaker'
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
+	Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " {{{ commenting
