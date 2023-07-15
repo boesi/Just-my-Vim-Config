@@ -10,7 +10,8 @@ set term=xterm
 set t_Co=256
 let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
-colo xoria256       " Colorscheme
+"color xoria256       " Colorscheme
+color habamax       " Colorscheme
 
 
 " {{{ generell settings
@@ -129,6 +130,16 @@ call plug#begin($VIM_FILES.'/plugged')
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'airblade/vim-gitgutter'
 call plug#end()
+
+" {{{ git gutter
+set signcolumn=number
+let g:gitgutter_sign_added = '++'
+let g:gitgutter_sign_modified = '>'
+let g:gitgutter_sign_removed = '__'
+" let g:gitgutter_sign_removed_first_line = '^^'
+" let g:gitgutter_sign_removed_above_and_below = '{'
+" let g:gitgutter_sign_modified_removed = 'ww'
+"}}}
 
 " {{{ commenting
 let g:NERDCommentWholeLinesInVMode=0
