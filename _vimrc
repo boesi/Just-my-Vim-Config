@@ -65,6 +65,11 @@ set fileformats=dos,unix,mac
 set mousemodel=popup_setpos
 set list listchars=tab:»-,trail:·,precedes:«,extends:»
 set guifont=Knack\ NF:h8.0
+
+" write with sudo if needed
+"cnoremap w!! execute 'silent! write !sudo tee % > /dev/null' <bar> edit!
+cmap w!! w !sudo tee > /dev/null %
+"nnoremap <F4> echo 'test' | :w !sudo tee > /dev/null %
 " }}}
 
 

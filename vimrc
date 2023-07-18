@@ -12,6 +12,8 @@ let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
 colo xoria256       " Colorscheme
 
+set ttymouse=xterm2
+set mouse=a
 
 " {{{ generell settings
 " no menu or toolbar - this must be set separately or nothing is set
@@ -80,8 +82,9 @@ elseif has("unix")
 endif
 
 set mousemodel=popup_setpos
+
 set list listchars=tab:»-,trail:·,precedes:«,extends:»
-set guifont=Hasklug\ Nerd\ Font\ Regular\ 10
+set guifont=FiraCode\ Nerd\ Font\ Mono\ Regular\ 10
 "set guifont=Hack\ Nerd\ Font\ Regular\ 10
 " }}}
 
@@ -127,6 +130,12 @@ call plug#begin($VIM_FILES.'/plugged')
 	Plug 'qstrahl/vim-matchmaker'
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
+	Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
+	Plug 'roxma/nvim-yarp', v:version >= 800 && !has('nvim') ? {} : { 'on': [], 'for': [] }
+	Plug 'roxma/vim-hug-neovim-rpc', v:version >= 800 && !has('nvim') ? {} : { 'on': [], 'for': [] }
+	Plug 'tpope/vim-surround'
+	Plug 'tpope/vim-commentary'
+	Plug 'tpope/vim-repeat'
 call plug#end()
 
 " {{{ commenting
