@@ -13,7 +13,9 @@ let &t_AF="\e[38;5;%dm"
 "color xoria256       " Colorscheme
 color habamax       " Colorscheme
 
-set ttymouse=xterm2
+" This setting doesn't work with kitty
+" Which other terminal emulators need it?
+" set ttymouse=xterm2
 set mouse=a
 
 " {{{ generell settings
@@ -60,7 +62,8 @@ syntax on        " Syntax-Highlightning on
 set backspace=indent,eol,start " allow backspacing over all in insert mode
 set whichwrap+=<,>,[,] " move to the previous/next line with left/right
 " what to save when saving session
-set sessionoptions=blank,buffers,curdir,options,winsize,winpos,resize
+" the default sessionoptions already contains these options and some more
+" set sessionoptions=blank,buffers,curdir,options,winsize,winpos,resize
 set foldlevelstart=1
 set foldmethod=syntax
 let javaScript_fold=1
@@ -138,6 +141,7 @@ call plug#begin($VIM_FILES.'/plugged')
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-repeat'
 	Plug 'airblade/vim-gitgutter'
+	Plug 'Exafunction/windsurf.vim'
 call plug#end()
 
 " {{{ git gutter
@@ -227,3 +231,4 @@ vnoremap <M-Left>    <gv
 command W :execute 'w !sudo tee "%" > /dev/null' | :edit!
 " }}}
 
+autocmd VimEnter * if argc() == 0 && filereadable("Session.vim") | source Session.vim | endif
